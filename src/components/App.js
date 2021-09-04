@@ -3,7 +3,9 @@ import Web3 from "web3";
 import "./App.css";
 import Dreadit from "../abis/Dreadit.json";
 import Navbar from "./Navbar";
+import Navbar2 from "./Navbar2";
 import Main from "./Main";
+import Main2 from "./Main2";
 
 //Declare IPFS
 const ipfsClient = require("ipfs-http-client");
@@ -63,6 +65,7 @@ class App extends Component {
 
   captureFile = (event) => {
     event.preventDefault();
+
     const file = event.target.files[0];
     const reader = new window.FileReader();
     reader.readAsArrayBuffer(file);
@@ -117,13 +120,20 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Navbar account={this.state.account} />
+        {/* <Navbar account={this.state.account} /> */}
+        <Navbar2 account={this.state.account} />
         {this.state.loading ? (
           <div id="loader" className="text-center mt-5">
             <p>Loading...</p>
           </div>
         ) : (
-          <Main
+          // <Main
+          //   images={this.state.images}
+          //   captureFile={this.captureFile}
+          //   uploadImage={this.uploadImage}
+          //   tipImageOwner={this.tipImageOwner}
+          // />
+          <Main2
             images={this.state.images}
             captureFile={this.captureFile}
             uploadImage={this.uploadImage}

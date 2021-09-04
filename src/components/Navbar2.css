@@ -1,0 +1,22 @@
+.imageDetails {
+  width: 50%;
+  height: 100px;
+
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+label {
+  margin: 0;
+  cursor: pointer;
+}
