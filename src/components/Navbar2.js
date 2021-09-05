@@ -12,11 +12,22 @@ import Fab from "@material-ui/core/Fab";
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 import Zoom from "@material-ui/core/Zoom";
 
+import "./Navbar2.css";
+
 const useStyles = makeStyles((theme) => ({
   root: {
     position: "fixed",
     bottom: theme.spacing(2),
     right: theme.spacing(2),
+  },
+  toolbar: {
+    minHeight: 96,
+    alignItems: "flex-start",
+    paddingTop: theme.spacing(1),
+    paddingBottom: theme.spacing(2),
+  },
+  navbar: {
+    boxShadow: "3px 3px 24px #FFB800",
   },
 }));
 
@@ -51,25 +62,24 @@ function ScrollTop(props) {
   );
 }
 
-// ScrollTop.propTypes = {
-//   children: PropTypes.element.isRequired,
-//   /**
-//    * Injected by the documentation to work in an iframe.
-//    * You won't need it on your project.
-//    */
-//   window: PropTypes.func,
-// };
-
 export default function NavBar2(props) {
+  const classes = useStyles();
+
   return (
     <React.Fragment>
       <CssBaseline />
-      <AppBar>
-        <div style={{ display: "flex", justifyContent: "space-between" }}>
-          <Toolbar>
-            <Typography variant="h5">DreadIT</Typography>
+      <AppBar className={classes.navbar}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "centre",
+          }}
+        >
+          <Toolbar className={classes.toolbar}>
+            <Typography variant="h2">DreadIT</Typography>
           </Toolbar>
-          <Toolbar>
+          <Toolbar className={classes.toolbar}>
             <Typography variant="caption">
               Address: <b>{props.account}</b>
             </Typography>
@@ -90,7 +100,7 @@ Praesent commodo cursus magna, vel scelerisque nisl consectetur et.`
         </Box>
       </Container> */}
       <ScrollTop {...props}>
-        <Fab color="secondary" size="small" aria-label="scroll back to top">
+        <Fab color="primary" size="large" aria-label="scroll back to top">
           <KeyboardArrowUpIcon />
         </Fab>
       </ScrollTop>

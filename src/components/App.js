@@ -6,6 +6,8 @@ import Navbar from "./Navbar";
 import Navbar2 from "./Navbar2";
 import Main from "./Main";
 import Main2 from "./Main2";
+import { ThemeProvider } from "@material-ui/core";
+import { theme } from "./Theme";
 
 //Declare IPFS
 const ipfsClient = require("ipfs-http-client");
@@ -119,28 +121,30 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        {/* <Navbar account={this.state.account} /> */}
-        <Navbar2 account={this.state.account} />
-        {this.state.loading ? (
-          <div id="loader" className="text-center mt-5">
-            <p>Loading...</p>
-          </div>
-        ) : (
-          // <Main
-          //   images={this.state.images}
-          //   captureFile={this.captureFile}
-          //   uploadImage={this.uploadImage}
-          //   tipImageOwner={this.tipImageOwner}
-          // />
-          <Main2
-            images={this.state.images}
-            captureFile={this.captureFile}
-            uploadImage={this.uploadImage}
-            tipImageOwner={this.tipImageOwner}
-          />
-        )}
-      </div>
+      <ThemeProvider theme={theme}>
+        <div>
+          {/* <Navbar account={this.state.account} /> */}
+          <Navbar2 account={this.state.account} />
+          {this.state.loading ? (
+            <div id="loader" className="text-center mt-5">
+              <p>Loading...</p>
+            </div>
+          ) : (
+            // <Main
+            //   images={this.state.images}
+            //   captureFile={this.captureFile}
+            //   uploadImage={this.uploadImage}
+            //   tipImageOwner={this.tipImageOwner}
+            // />
+            <Main2
+              images={this.state.images}
+              captureFile={this.captureFile}
+              uploadImage={this.uploadImage}
+              tipImageOwner={this.tipImageOwner}
+            />
+          )}
+        </div>
+      </ThemeProvider>
     );
   }
 }

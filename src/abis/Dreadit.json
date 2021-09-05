@@ -5224,12 +5224,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0xdD34B4b3bc41A4128d062Af6EcAa7b1187e57eF6",
-      "transactionHash": "0x275e13800cb49f0041a2a451b6fe2a37b047a61ff735c756e4b3ffee9e747b45"
+      "address": "0x00Fb474641f644a57E55a739e2bCf72b8C198E30",
+      "transactionHash": "0x91af0d47044b918312e6c35a23cead799e48e3e19aa7e041f7e00c0fa6eb3663"
     }
   },
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-09-04T20:14:50.964Z",
+  "updatedAt": "2021-09-05T09:01:32.902Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}

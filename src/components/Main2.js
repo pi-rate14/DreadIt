@@ -1,6 +1,6 @@
 import { Box, makeStyles, TextField, Typography } from "@material-ui/core";
 import React, { useState } from "react";
-import { Button, Container } from "react-bootstrap";
+import { Button, Container } from "@material-ui/core";
 
 import "./Navbar2.css";
 
@@ -25,6 +25,7 @@ const Main2 = (props) => {
   const classes = useStyles();
   const [description, setDescription] = useState("");
   const [file, setFile] = useState("");
+
   const handleSubmit = (e) => {
     e.preventDefault();
     props.uploadImage(description);
@@ -32,10 +33,10 @@ const Main2 = (props) => {
 
   return (
     <div>
-      <Container maxWidth="sm">
+      <Container maxWidth="sm" style={{ marginTop: "70px" }}>
         <Box>
-          <Typography align="center" variant="h1">
-            Share your Image!
+          <Typography align="center" variant="h1" style={{ fontWeight: "600" }}>
+            SHARE ;)
           </Typography>
         </Box>
         <div className="imageDetails">
@@ -52,11 +53,16 @@ const Main2 = (props) => {
             onChange={props.captureFile}
           />
           <div className="buttons">
-            <Button>
+            <Button variant="outlined" color="primary">
               <label htmlFor="upload_file">Choose</label>
             </Button>
 
-            <Button disabled={description ? 0 : 1} onClick={handleSubmit}>
+            <Button
+              variant="contained"
+              color="primary"
+              disabled={description ? 0 : 1}
+              onClick={handleSubmit}
+            >
               UPLOAD
             </Button>
           </div>
@@ -69,7 +75,7 @@ const Main2 = (props) => {
               key={key}
             >
               <div className="card-header">
-                <Typography variant="caption">
+                <Typography color="textSecondary" variant="caption">
                   <b>By: </b>
                   {image.author}
                 </Typography>
@@ -79,13 +85,13 @@ const Main2 = (props) => {
                   <p className="text-center">
                     <img
                       src={`https://ipfs.infura.io/ipfs/${image.hashVal}`}
-                      style={{ maxWidth: "420px" }}
+                      style={{ maxWidth: "420px", maxHeight: "420px" }}
                     />
                   </p>
                   <p>{image.description}</p>
                 </li>
                 <li key={key} className="list-group-item py-2">
-                  <small className="float-left mt-1 text-muted">
+                  <small className="float-left mt-1">
                     TIPS:{" "}
                     {window.web3.utils.fromWei(
                       image.tipAmount.toString(),
@@ -95,6 +101,7 @@ const Main2 = (props) => {
                   </small>
                   <button
                     className="btn btn-link btn-sm float-right pt-0"
+                    style={{ float: "right" }}
                     name={image.id}
                     onClick={(event) => {
                       let tipAmount = window.web3.utils.toWei("0.1", "Ether");

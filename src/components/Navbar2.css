@@ -9,6 +9,30 @@
   margin-bottom: 50px;
 }
 
+.card-header {
+  background-color: #242627;
+}
+
+.list-group-item.py-2 {
+  background-color: #242627;
+}
+
+small {
+  color: #ffffff;
+}
+
+.card.mb-4 {
+  border: none;
+}
+
+.btn {
+  color: rgb(247, 88, 88);
+}
+
+.btn:hover {
+  color: salmon;
+}
+
 .buttons {
   margin-top: 20px;
   display: flex;
